@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "GitHub Disable Turbolinks",
+  "version": "1.0.0",
+  "description": "Use regular page navigation on github.com by opting out of Turbo Drive.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "github-disable-turbolinks@schuster.to",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*"],
+      "js": ["disable-turbo.js"],
+      "run_at": "document_idle",
+      "world": "MAIN"
+    }
+  ]
+}
